@@ -14,7 +14,7 @@ const engine = (rules, logicOfGame) => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'. \nLet's try again, ${name}!`);
       return;
     }
   }
