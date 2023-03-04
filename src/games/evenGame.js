@@ -1,5 +1,4 @@
 import _ from 'lodash';
-// import engine from '../index.js';
 
 export const rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
