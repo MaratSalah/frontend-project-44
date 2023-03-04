@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export const rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+export const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export const brainEven = () => {
   const randomNumber = _.random(1, 100);
