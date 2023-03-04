@@ -18,5 +18,5 @@ export const progressionGame = () => {
       firstNubmer += step;
     }
   }
-  return [progression, trueAnswer.toString()];
+  return [progression.toString(), trueAnswer.toString()];
 };
