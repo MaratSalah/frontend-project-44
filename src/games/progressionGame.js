@@ -3,20 +3,19 @@ import _ from 'lodash';
 export const rule = 'What number is missing in the progression?';
 
 export const progressionGame = () => {
-  let progression = '';
+  const progression = [];
   const step = _.random(1, 3);
   const indexOfDots = _.random(1, 9);
   let firstNubmer = 0;
-  let trueAnswer;
   for (let i = 0; i < 10; i += 1) {
     if (i === indexOfDots) {
-      progression = `${progression} ..`;
-      trueAnswer = firstNubmer;
+      progression.push('..');
       firstNubmer += step;
     } else {
-      progression = `${progression} ${firstNubmer}`;
       firstNubmer += step;
+      progression.push(firstNubmer);
     }
   }
-  return [progression.toString(), trueAnswer.toString()];
+  const trueAnswer = progression[progression.indexOf('..') - 1] + step;
+  return [progression.join(' '), trueAnswer.toString()];
 };
