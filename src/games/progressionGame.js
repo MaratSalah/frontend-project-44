@@ -12,7 +12,8 @@ export const progressionGame = () => {
       progression.push('..');
       firstNubmer += step;
     } else {
-      progression.push(firstNubmer += step);
+      firstNubmer += step;
+      progression.push(firstNubmer);
     }
   }
   const trueAnswer = progression[progression.indexOf('..') - 1] + step;
