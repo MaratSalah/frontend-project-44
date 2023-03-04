@@ -17,5 +17,5 @@ export const progressionGame = () => {
     }
   }
   const trueAnswer = progression[progression.indexOf('..') - 1] + step;
-  return [progression, trueAnswer.toString()];
+  return [progression.toString(), trueAnswer.toString()];
 };
