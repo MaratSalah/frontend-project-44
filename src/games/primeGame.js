@@ -2,20 +2,24 @@ import _ from 'lodash';
 
 export const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const primeGame = () => {
-  const randomNumber = _.random(2, 100);
-  const question = randomNumber;
-  let trueAnswer;
-  for (let i = randomNumber - 1; i >= 1; i -= 1) {
-    if ((randomNumber) % i !== 0) {
-      trueAnswer = 'yes';
+const isPrime = (number) => {
+  let result;
+  for (let i = number - 1; i >= 1; i -= 1) {
+    if ((number) % i !== 0) {
+      result = true;
     } else if (i === 1) {
-      trueAnswer = 'yes';
-      return [question, trueAnswer];
-    } else if ((randomNumber) % i === 0) {
-      trueAnswer = 'no';
-      return [question, trueAnswer];
+      result = true;
+      return result;
+    } else if ((number) % i === 0) {
+      result = false;
+      return result;
     }
   }
-  return [question, trueAnswer];
+  return result;
+};
+
+export const primeGame = () => {
+  const randomNumber = _.random(0, 100);
+  const trueAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, trueAnswer];
 };
